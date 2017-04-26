@@ -30,6 +30,10 @@ public class Client : MonoBehaviour
         GetPCInfo pcInfo = new GetPCInfo();
         string result = pcInfo.PCInfo();
         result = pcInfo.CreatePsw(result);
+        if (resultText != null)
+        {
+            resultText.text = result!=null ? "创建成功!" : "创建失败！";
+        }
     }
 
     public void CheckPswClick()
