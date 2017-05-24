@@ -40,7 +40,8 @@ public class Client : MonoBehaviour
     {
         EqualPassWord equal = new EqualPassWord();
         GetPCInfo pcInfo = new GetPCInfo();
-        bool bl = equal.EqualPassword(pcInfo.PCInfo());
+        string pc = pcInfo.PCInfo();
+        bool bl = pc==null?false:equal.EqualPassword(pc);
         if (resultText!=null)
         {
             resultText.text = bl ? "绑定成功!" : "绑定失败！";

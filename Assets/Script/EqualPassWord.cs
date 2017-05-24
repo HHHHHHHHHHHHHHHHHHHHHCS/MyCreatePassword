@@ -24,6 +24,10 @@ public class EqualPassWord
 
     public bool EqualPassword(string input)
     {
+        if (input == null)
+        {
+            return false;
+        }
         string password = GetPassword();
         if (password == null)
         {

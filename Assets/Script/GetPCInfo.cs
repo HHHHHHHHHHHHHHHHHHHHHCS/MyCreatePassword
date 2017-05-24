@@ -72,6 +72,10 @@ public class GetPCInfo
         {
             systemInfo += "_hmd_TrackingSystemName:" + steamVR.hmd_TrackingSystemName + "_hmd_SerialNumber:" + steamVR.hmd_SerialNumber;
         }
+        else
+        {
+            systemInfo = null;
+        }
         return systemInfo;
     }
 }
