@@ -26,6 +26,10 @@ public class SaltManager
 
     public string FindLine(int pos)
     {
+        if(pos<0)
+        {
+            return null;
+        }
         if (FileExist())
         {
             StreamReader sr = File.OpenText(finalPath);

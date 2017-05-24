@@ -24,6 +24,11 @@ public class GetPCInfo
 
     public string CreatePsw(string info)
     {
+        if (string.IsNullOrEmpty(info))
+        {
+            return null;
+        }
+
         FileStream fs1 = new FileStream(finalPath, FileMode.Create, FileAccess.Write);//创建写入文件 
         StreamWriter sw = new StreamWriter(fs1);
         string result = CreateMD5(info);
@@ -39,6 +44,11 @@ public class GetPCInfo
 
     string CreateMD5(string password)
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
+
         byte[] bytValue = Encoding.UTF8.GetBytes(password);
         try
         {

@@ -24,15 +24,12 @@ public class EqualPassWord
 
     public bool EqualPassword(string input)
     {
-        if (input == null)
+        if (string.IsNullOrEmpty(input))
         {
             return false;
         }
+
         string password = GetPassword();
-        if (password == null)
-        {
-            return false;
-        }
 
         int pos1 = -1, pos2 = -1;
         GetPos(password, out pos1, out pos2);
@@ -82,6 +79,12 @@ public class EqualPassWord
 
     bool GetPos(string password, out int pos1, out int pos2)
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            pos1 = pos2 = -1;
+            return false;
+        }
+
         try
         {
             pos1 = int.Parse(password.Substring(0, 2));
@@ -122,6 +125,11 @@ public class EqualPassWord
 
     string CreateSHA512(string password, string salt)
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
+
         byte[] bytValue = Encoding.UTF8.GetBytes(password + salt);
         try
         {
@@ -143,6 +151,11 @@ public class EqualPassWord
 
     string CreateMD5(string password, string salt = "")
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
+
         byte[] bytValue = Encoding.UTF8.GetBytes(password + salt);
         try
         {

@@ -51,6 +51,10 @@ public class CreatePassword : MonoBehaviour
 
     private string _Create(string password)
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
         try
         {
             int pos1, pos2;
@@ -107,6 +111,13 @@ public class CreatePassword : MonoBehaviour
 
     string CreateSHA512(string password, string salt)
     {
+
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
+
+
         byte[] bytValue = Encoding.UTF8.GetBytes(password + salt);
         try
         {
@@ -128,6 +139,11 @@ public class CreatePassword : MonoBehaviour
 
     string CreateMD5(string password, string salt)
     {
+        if (string.IsNullOrEmpty(password))
+        {
+            return null;
+        }
+
         byte[] bytValue = Encoding.UTF8.GetBytes(password + salt);
         try
         {
