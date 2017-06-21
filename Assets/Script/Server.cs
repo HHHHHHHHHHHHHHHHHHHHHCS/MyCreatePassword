@@ -22,11 +22,11 @@ public class Server : MonoBehaviour
         {
             oneClickButton.onClick.AddListener(OneClick);
         }
-        if (oneClickButton != null)
+        if (saltButton != null)
         {
             saltButton.onClick.AddListener(CreateSaltClick);
         }
-        if (oneClickButton != null)
+        if (passwordButton != null)
         {
             passwordButton.onClick.AddListener(CreatePasswordClick);
         }
