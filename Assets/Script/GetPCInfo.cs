@@ -71,16 +71,16 @@ public class GetPCInfo
     public string PCInfo()
     {
         SteamVR steamVR = SteamVR.instance;
-        string systemInfo = "_deviceName:" + SystemInfo.deviceName + "_deviceType:" + SystemInfo.deviceType +
-            "_deviceUniqueIdentifier:" + SystemInfo.deviceUniqueIdentifier + "_graphicsDeviceID:" + SystemInfo.graphicsDeviceID +
-            "_graphicsDeviceName:" + SystemInfo.graphicsDeviceName + "_graphicsDeviceVendor:" + SystemInfo.graphicsDeviceVendor +
-            "_graphicsDeviceVendorID:" + SystemInfo.graphicsDeviceVendorID +
-            "_graphicsMemorySize:" + "_operatingSystem:" + SystemInfo.operatingSystem +
-            "_processorCount:" + SystemInfo.processorCount + "_processorType:" + SystemInfo.processorType +
-            "_systemMemorySize:" + SystemInfo.systemMemorySize;
+        string systemInfo = "__deviceName:" + SystemInfo.deviceName + "__deviceType:" + SystemInfo.deviceType +
+            "__deviceUniqueIdentifier:" + SystemInfo.deviceUniqueIdentifier + "__graphicsDeviceID:" + SystemInfo.graphicsDeviceID +
+            "__graphicsDeviceName:" + SystemInfo.graphicsDeviceName + "__graphicsDeviceVendor:" + SystemInfo.graphicsDeviceVendor +
+            "__graphicsDeviceVendorID:" + SystemInfo.graphicsDeviceVendorID +
+            "__graphicsMemorySize:" + "__operatingSystem:" + SystemInfo.operatingSystem +
+            "__processorCount:" + SystemInfo.processorCount + "__processorType:" + SystemInfo.processorType +
+            "__systemMemorySize:" + SystemInfo.systemMemorySize;
         if (steamVR != null)
         {
-            systemInfo += "_hmd_TrackingSystemName:" + steamVR.hmd_TrackingSystemName + "_hmd_SerialNumber:" + steamVR.hmd_SerialNumber;
+            systemInfo += "__hmd_TrackingSystemName:" + steamVR.hmd_TrackingSystemName + "__hmd_SerialNumber:" + steamVR.hmd_SerialNumber;
         }
         else
         {
